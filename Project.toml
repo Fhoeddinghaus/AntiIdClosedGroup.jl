@@ -1,0 +1,10 @@
+name = "AntiIdClosedGroup"
+uuid = "80f28a0d-db6d-431d-b3de-c677e0e54f4e"
+authors = ["Fhoeddinghaus <info@xefli.de>"]
+version = "0.1.0"
+
+[deps]
+ClosedGroupFunctions = "581c2355-614f-4818-9ab6-73d32dfd7ae2"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+Zd_Arithmetics = "dae23b14-1d9f-48bd-9860-35d57b14b1c1"

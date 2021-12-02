@@ -4,7 +4,9 @@ authors = ["Fhoeddinghaus <info@xefli.de>"]
 version = "0.1.0"
 
 [deps]
+Bijections = "e2ed5e7c-b2de-5872-ae92-c73ca462fb04"
 ClosedGroupFunctions = "581c2355-614f-4818-9ab6-73d32dfd7ae2"
+Combinatorics = "861a8166-3701-5b0c-9a16-15d98fcdc6aa"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 Zd_Arithmetics = "dae23b14-1d9f-48bd-9860-35d57b14b1c1"

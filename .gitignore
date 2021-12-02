@@ -4,3 +4,5 @@
 deps/deps.jl
 docs/build/
 .DS_Store
+docs/.ipynb_checkpoints/
+docs/permutation_cycles_*

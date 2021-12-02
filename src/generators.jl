@@ -48,7 +48,7 @@ function construct_generators(n::Int64, k::Int64, prnt = false)
     all_pos = []
     push!(all_pos, first_po(n,k))
     # save first PO as matrix
-    all_generating_matrices = []
+    all_generating_matrices = SparseMatrixCSC{ℤ₂, Int64}[]
     push!(all_generating_matrices, po2matrix(all_pos[1],n))
 
     if prnt

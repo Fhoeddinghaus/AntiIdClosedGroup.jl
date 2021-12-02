@@ -4,8 +4,10 @@ using ClosedGroupFunctions
 using Zd_Arithmetics
 using SparseArrays
 using LinearAlgebra
+using Combinatorics
+using Bijections
 
-import Zd_Arithmetics.ℤ₂
+import Zd_Arithmetics: ℤ₂, ℤ₄
 
 export 
 
@@ -20,10 +22,25 @@ export
 
     first_po,
     next_po,
-    construct_generators
+    construct_generators,
+
+    perm_rows,
+    perm_cols,
+    print_permutation_cycles,
+    apply_permutation,
+
+    ord,
+    tr_of_power,
+    rank_of_power_plus_id,
+    ℤ₂ⁿ,
+    ker_g_plus_id,
+    quadratic_form,
+    GArf
 
 include("anti-identity.jl")
 include("notation_converters.jl")
 include("generators.jl")
+include("permutations.jl")
+include("conjugacy_invariants.jl")
 
 end # module

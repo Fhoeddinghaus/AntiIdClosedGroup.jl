@@ -13,6 +13,11 @@ repo-url = "git@github.com:Fhoeddinghaus/ClosedGroupFunctions.jl.git"
 uuid = "581c2355-614f-4818-9ab6-73d32dfd7ae2"
 version = "0.1.0"
 
+[[Combinatorics]]
+git-tree-sha1 = "08c8b6831dc00bfea825826be0bc8336fc369860"
+uuid = "861a8166-3701-5b0c-9a16-15d98fcdc6aa"
+version = "1.0.2"
+
 [[Distributed]]
 deps = ["Random", "Serialization", "Sockets"]
 uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"

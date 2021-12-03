@@ -2,14 +2,15 @@
 
 
 """
-    ord(g::SparseMatrixCSC{ℤ₂, Int64})::Int64
+    ord(g::SparseMatrixCSC{ℤ₂, Int64}, n::Int64)::Int64
 
 Calculate the order of a given element `g`, with `g^order = identity`. Only works for elements with finite order ("order > 0").
 """
-function ord(g::SparseMatrixCSC{ℤ₂, Int64})::Int64
+function ord(g::SparseMatrixCSC{ℤ₂, Int64}, n::Int64)::Int64
     i = 1
+    I = id(n)
     while true
-        if g^i == id(n)
+        if g^i == I
             return i
         end
         i += 1
@@ -27,11 +28,11 @@ tr_of_power(g::SparseMatrixCSC{ℤ₂, Int64}, power::Int64)::Int64 = tr(g^power
 
 
 """
-    rank_of_power_plus_id(g::SparseMatrixCSC{ℤ₂, Int64}, power::Int64, n)::Int64
+    rank_of_power_plus_id(g::Matrix{ℤ₂}, power::Int64, n)::Int64
 
 Alias for `rank(g^power + id(n))`.
 """
-rank_of_power_plus_id(g::SparseMatrixCSC{ℤ₂, Int64}, power::Int64, n::Int64)::Int64 = rank(g^power + id(n))
+rank_of_power_plus_id(g::Matrix{ℤ₂}, power::Int64, n::Int64)::Int64 = rank(g^power + id(n))
 
 # symmetry: LinearAlgebra.issymmetric() works automatically
 
@@ -103,6 +104,11 @@ function GArf(f::Function, V::Vector; readable=true)
 end
 
 ## 5. combine all steps to get the final invariant that is used
+"""
+    generalized_arf(g::SparseMatrixCSC{ℤ₂, Int64}, n::Int64; readable = true)
+
+Combines the calculation of the kernel `Vg = ker_g_plus_id(g,n)` with the generalized Arf invariant `GArf(quadratic_form, Vg)`.
+"""
 function generalized_arf(g::SparseMatrixCSC{ℤ₂, Int64}, n::Int64; readable = true)
     # calculate the kernel
     Vg = ker_g_plus_id(g, n)

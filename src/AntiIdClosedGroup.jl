@@ -37,7 +37,8 @@ export
     ℤ₂ⁿ,
     ker_g_plus_id,
     quadratic_form,
-    GArf
+    GArf,
+    generalized_arf
 
 include("anti-identity.jl")
 include("notation_converters.jl")

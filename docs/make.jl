@@ -7,6 +7,7 @@ makedocs(
     authors = "Felix Höddinghaus",
     pages = [
         "index.md",
+        "anti-identity.md"
     ],
 )
 

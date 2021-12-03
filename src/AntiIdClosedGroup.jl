@@ -8,6 +8,7 @@ using Combinatorics
 using Bijections
 
 import Zd_Arithmetics: ℤ₂, ℤ₄
+import Base: inv
 
 export 
 
@@ -19,6 +20,7 @@ export
     po2matrix,
     po2latex,
     all_pos2latex,
+    inv,
 
     first_po,
     next_po,

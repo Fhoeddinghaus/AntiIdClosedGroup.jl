@@ -161,3 +161,10 @@ function all_pos2latex(all_pos, n)
         println(po2latex(idx, n; po_notation=true, hl_po = false))
     end
 end
+
+"""
+    inv(A::SparseMatrixCSC{ℤ₂})::Matrix{ℤ₂}
+
+Wrapper for the invariant, converts the SparseMatrix back to a matrix, then calls `Zd_Arithmetics.inv`.
+"""
+inv(A::SparseMatrixCSC{ℤ₂})::Matrix{ℤ₂} = inv(Matrix{ℤ₂}(A))

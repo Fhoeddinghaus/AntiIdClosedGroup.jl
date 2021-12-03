@@ -83,12 +83,12 @@ end
 
 ## 4. GArf
 """
-    GArf(f::Function, V::Vector{Vector}; readable=true)
+    GArf(f::Function, V::Vector; readable=true)
 
-Implements the GArf-invariant by applying the function `f` to all elements in `V`, see:
+Implements the GArf-invariant by applying the function `f` to all vectors in `V` (List of Vectors), see:
 ``\\text{GArf}(q) = phase\\left\\{  \\sum_{\\vec x\\in V_g} i^{q(\\vec x)}  \\right\\}``
 """
-function GArf(f::Function, V::Vector{Vector}; readable=true)
+function GArf(f::Function, V::Vector; readable=true)
     # define the imaginary unit
     𝑖 = 1im
     # calculate the phase of the sum of 𝑖^f(x) for all x ∈ V using broadcasting (".")
@@ -100,4 +100,12 @@ function GArf(f::Function, V::Vector{Vector}; readable=true)
         # return plain radian value
         return φ
     end
+end
+
+## 5. combine all steps to get the final invariant that is used
+function generalized_arf(g::SparseMatrixCSC{ℤ₂, Int64}, n::Int64; readable = true)
+    # calculate the kernel
+    Vg = ker_g_plus_id(g, n)
+    # calculate the GArf
+    return GArf(quadratic_form, Vg; readable=readable)
 end

@@ -7,7 +7,12 @@ makedocs(
     authors = "Felix Höddinghaus",
     pages = [
         "index.md",
-        "anti-identity.md"
+        "anti-identity.md",
+        "notation.md",
+        "generators.md",
+        "permutations.md",
+        "conjugacy-invariants.md",
+        "example.md",
     ],
 )
 

@@ -15,7 +15,9 @@ end
     ai2po(idx::Vector{Int64}, n::Int64) -> po_idx::Vector{Int64}
 
 Generator-Notation: Convert AI notation array (anti-identity row/column-indices) to PO notation array (padding ones indices).
-Not really used much but for completenes.
+Not really used much but for completenes. 
+    
+Equivalent to [`po2ai`](@ref).
 """
 function ai2po(idx::Vector{Int64}, n::Int64)::Vector{Int64}
     po_idx = collect(1:n)
@@ -155,6 +157,8 @@ end
     all_pos2latex(all_pos, n) -> String
 
 LaTeX: Print LaTeX-Arrays for all given base matrices in PO notation in all_pos with a set of default parameters.
+
+See [`po2latex`](@ref) for more information about the possible parameters.
 """
 function all_pos2latex(all_pos, n)
     for idx in all_pos
@@ -165,6 +169,6 @@ end
 """
     inv(A::SparseMatrixCSC{ℤ₂})::Matrix{ℤ₂}
 
-Wrapper for the invariant, converts the SparseMatrix back to a matrix, then calls `Zd_Arithmetics.inv`.
+Wrapper for the invariant, converts the SparseMatrix back to a matrix, then calls [`Zd_Arithmetics.inv`](https://fhoeddinghaus.github.io/Zd_Arithmetics.jl/operations/#Base.inv-Union{Tuple{Array{%E2%84%A4d{T,%20d},%202}},%20Tuple{d},%20Tuple{T}}%20where%20{T%3C:Integer,%20d}).
 """
 inv(A::SparseMatrixCSC{ℤ₂})::Matrix{ℤ₂} = inv(Matrix{ℤ₂}(A))

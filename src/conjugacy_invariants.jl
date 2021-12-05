@@ -22,7 +22,7 @@ end
 """
     tr_of_power(g::SparseMatrixCSC{ℤ₂, Int64}, power::Int64)::Int64
 
-Alias for `tr(g^power)`.
+Alias for the trace `tr(g^power)`.
 """
 tr_of_power(g::SparseMatrixCSC{ℤ₂, Int64}, power::Int64)::Int64 = tr(g^power)
 
@@ -108,6 +108,7 @@ end
     generalized_arf(g::SparseMatrixCSC{ℤ₂, Int64}, n::Int64; readable = true)
 
 Combines the calculation of the kernel `Vg = ker_g_plus_id(g,n)` with the generalized Arf invariant `GArf(quadratic_form, Vg)`.
+See [`ker_g_plus_id`](@ref), [`quadratic_form`](@ref) and [`GArf`](@ref).
 """
 function generalized_arf(g::SparseMatrixCSC{ℤ₂, Int64}, n::Int64; readable = true)
     # calculate the kernel

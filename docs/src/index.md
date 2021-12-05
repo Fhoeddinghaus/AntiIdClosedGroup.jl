@@ -20,12 +20,8 @@ or
 ## Contents
 
 ```@contents
-Pages = []
+Pages = ["index.md", "anti-identity.md", "notation.md", "generators.md", "permutations.md", "conjugacy-invariants.md", "example.md"]
 Depth = 3
-```
-
-```@autodocs
-Modules = [AntiIdClosedGroup]
 ```
 
 ## Index

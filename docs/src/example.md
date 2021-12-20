@@ -58,7 +58,7 @@ The generators can be converted to LaTeX-code if needed using [`po2matrix`](@ref
 ### Generating the groups using the `ClosedGroupFunctions.jl`-Package
 
 ```julia
-group, num_all_multiplications = group_generator_basic(all_generators; prnt=false, commutes=false);
+group, num_all_multiplications = group_generator_basic(all_generators; prnt=false);
 ```
 
 It's not necessary to use the standard generators, as the `group_generator_basic` takes all kind of elements. Someone may try smaller sets of generators, as seen below (permutations).
@@ -81,10 +81,10 @@ all_generators_labelled = label_generators(all_generators);
 
 # label the group with the fast method
 #number_of_elements = length(group)
-#labelled_group = labelled_group_generator_simple(all_generators_labelled, number_of_elements; commutes=false);
+#labelled_group = labelled_group_generator_simple(all_generators_labelled, number_of_elements);
 
 # or label the group with the shortest possible label (slower method)
-labelled_group = labelled_group_generator_shortest(all_generators_labelled; prnt=false, commutes=false)[1];
+labelled_group = labelled_group_generator_shortest(all_generators_labelled; prnt=false)[1];
 ```
 
 See [`ClosedGroupFunctions.jl` Documentation](https://fhoeddinghaus.github.io/ClosedGroupFunctions.jl/).
@@ -145,7 +145,7 @@ See [`perm_rows`](@ref) and [`perm_cols`](@ref).
 
 #### Calculate the group with the new generators
 ```julia
-group_with_perms, num_all_multiplications_with_perms = group_generator_basic(new_generators; prnt=false, commutes=false);
+group_with_perms, num_all_multiplications_with_perms = group_generator_basic(new_generators; prnt=false);
 
 
 # As explained in the thesis results, the group stays the same under permutations, 
